@@ -129,16 +129,16 @@ main {
     margin: 10px;
 }
 
-.cart-icon {
+#empty-cart-icon {
     width: 30px;
     height: 30px;
 }
 
 #order-container {
     flex: 1 0 20%;
-    max-height: 60vh;
+    /* max-height: 60vh; */
     animation: yourOrderContainerDrop 0.5s 0.1s forwards;
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 
 #order-title {
@@ -191,6 +191,27 @@ main {
 
 .item-description {
     color: grey;
+}
+
+.item-price-cart-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+/** ORDER CONTAINER **/
+.order-item-img {
+    width: 70px;
+    height: 70px;
+    background: url("./assets/images/menu-items/fried-rice.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.order-item {
+    padding: 1rem 1.2rem;
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid grey;
 }
 
 /** MEDIA **/

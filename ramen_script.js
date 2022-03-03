@@ -100,9 +100,21 @@ function createMenuItem(menuItemContext) {
     itemPrice.setAttribute("class", "item-price");
     itemPrice.innerText = menuItemContext.price;
 
+    const itemPriceCartContainer = document.createElement("div");
+    itemPriceCartContainer.setAttribute("class", "item-price-cart-container");
+
+    const addToCart = document.createElement("button");
+    addToCart.setAttribute("type", "button");
+    addToCart.innerText = "Add to cart";
+
+    addToCart.addEventListener("click", addToCartHandler);
+
+    itemPriceCartContainer.appendChild(itemPrice);
+    itemPriceCartContainer.appendChild(addToCart);
+
     itemInfoSection.appendChild(itemName);
     itemInfoSection.appendChild(itemDesc);
-    itemInfoSection.appendChild(itemPrice);
+    itemInfoSection.appendChild(itemPriceCartContainer);
 
     item.appendChild(itemImgContainer);
     item.appendChild(itemInfoSection);
@@ -110,4 +122,27 @@ function createMenuItem(menuItemContext) {
     menuItemNode.appendChild(item);
 
     menuItemsContainer.appendChild(menuItemNode);
+}
+
+function addToCartHandler() {
+    console.log("Added to cart");
+    const orderItemsSection = document.getElementById("order-items-section");
+
+    const orderItem = document.createElement("div");
+    orderItem.setAttribute("class", "order-item");
+    orderItem.setAttribute("id", "1");
+
+    const orderItemImg = document.createElement("div");
+    orderItemImg.setAttribute("class", "order-item-img");
+    orderItemImg.style.backgroundImage =
+        "url(./assets/images/menu-items/fried-rice.jpg";
+
+    const orderItemName = document.createElement("p");
+    orderItemName.setAttribute("class", "order-item-name");
+    orderItemName.innerText = "Fried Rice";
+
+    orderItem.appendChild(orderItemImg);
+    orderItem.appendChild(orderItemName);
+
+    orderItemsSection.appendChild(orderItem);
 }
