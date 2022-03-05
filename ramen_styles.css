@@ -1,255 +1,292 @@
 @font-face {
-    font-family: Rabiohead;
-    src: url("./assets/fonts/rabiohead.ttf");
+  font-family: Rabiohead;
+  src: url("./assets/fonts/rabiohead.ttf");
 }
 
 @font-face {
-    font-family: Neutraface;
-    src: url("./assets/fonts/Neutraface2Text-Book.otf");
+  font-family: Neutraface;
+  src: url("./assets/fonts/Neutraface2Text-Book.otf");
 }
 
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 html,
 body {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden;
 }
 
 body {
-    background-color: #eee;
+  background-color: #eee;
 }
 
 #gradient-bg {
-    height: 80vh;
-    width: 100vw;
-    position: absolute;
-    top: 0;
-    background-image: linear-gradient(rgb(239, 233, 222), #eee);
-    z-index: -1;
+  height: 80vh;
+  width: 100vw;
+  position: absolute;
+  top: 0;
+  background-image: linear-gradient(rgb(239, 233, 222), #eee);
+  z-index: -1;
 }
 
 h1 {
-    font-size: 4.209rem;
+  font-size: 4.209rem;
 }
 
 h2 {
-    font-size: 3.157rem;
+  font-size: 3.157rem;
 }
 
 h3 {
-    font-size: 2.369rem;
+  font-size: 2.369rem;
 }
 
 h4 {
-    font-size: 1.777rem;
+  font-size: 1.777rem;
 }
 
 h5 {
-    font-size: 1.333rem;
+  font-size: 1.333rem;
 }
 
 small,
 .text_small {
-    font-size: 0.75rem;
+  font-size: 0.75rem;
 }
 
 #content {
-    max-width: 80vw;
-    margin: 50px auto;
+  max-width: 80vw;
+  margin: 50px auto;
 }
 
 header {
-    font-family: Rabiohead;
-    text-align: center;
+  font-family: Rabiohead;
+  text-align: center;
 }
 
 #blobSvg {
-    position: absolute;
-    width: 45rem;
-    height: auto;
-    top: -10rem;
-    left: -10rem;
-    z-index: -1;
+  position: absolute;
+  width: 45rem;
+  height: auto;
+  top: -10rem;
+  left: -10rem;
+  z-index: -1;
 
-    animation: clearBlob 0.5s 0.2s forwards;
-    opacity: 0;
-    transform: translateX(-10rem);
+  animation: clearBlob 0.5s 0.2s forwards;
+  opacity: 0;
+  transform: translateX(-10rem);
 }
 
 #ptk-ramen-title {
-    animation: clear 0.5s 0.2s forwards;
-    transform: translateY(-10rem);
-    opacity: 0;
+  animation: clear 0.5s 0.2s forwards;
+  transform: translateY(-10rem);
+  opacity: 0;
 }
 
 main {
-    font-family: Neutraface;
-    width: 100%;
+  font-family: Neutraface;
+  width: 100%;
 
-    display: flex;
-    gap: 10px;
+  display: flex;
+  gap: 10px;
 }
 
 #menu-container {
-    flex: 0 1 80%;
+  flex: 0 1 80%;
 }
 
 .title {
-    text-align: center;
-    width: 100%;
+  text-align: center;
+  width: 100%;
 }
 
 .container {
-    background-color: white;
-    border-radius: 2rem;
+  background-color: white;
+  border-radius: 2rem;
 }
 
 /** ORDER CONTAINER **/
 
 #empty-order-container {
-    height: 150px;
-    width: 150px;
-    margin: auto;
-    margin-top: 50px;
-    border-radius: 50%;
-    background-color: #eee;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+  height: 150px;
+  width: 150px;
+  margin: auto;
+  margin-top: 50px;
+  border-radius: 50%;
+  background-color: #eee;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
 #empty-order-container small {
-    margin: 10px;
+  margin: 10px;
 }
 
 #empty-cart-icon {
-    width: 30px;
-    height: 30px;
+  width: 30px;
+  height: 30px;
 }
 
 #order-container {
-    flex: 1 0 20%;
-    /* max-height: 60vh; */
-    animation: yourOrderContainerDrop 0.5s 0.1s forwards;
-    /* overflow: hidden; */
+  flex: 1 0 20%;
 }
 
 #order-title {
-    border-bottom: 0.5px solid grey;
+  border-bottom: 0.5px solid grey;
 }
 
 /** MENU **/
 
 #menu-items-section {
-    display: flex;
-    flex-wrap: wrap;
-    column-gap: 15px;
-    row-gap: 20px;
-    justify-content: center;
-    padding: 1.2rem 0;
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 15px;
+  row-gap: 20px;
+  justify-content: center;
+  padding: 1.2rem 0;
 }
 
 .menu-item {
-    background-color: whitesmoke;
-    border-radius: 15px;
-    max-width: 240px;
-    box-shadow: 1px 1px 7px #80808091;
+  background-color: whitesmoke;
+  border-radius: 15px;
+  max-width: 240px;
+  box-shadow: 1px 1px 7px #80808091;
 
-    animation: clear 1.5s 0.5s forwards;
-    opacity: 0;
+  animation: clear 1.5s 0.5s forwards;
+  opacity: 0;
 }
 
 .item-image-container {
-    height: 140px;
-    width: 240px;
-    background: url("./assets/images/menu-items/fried-rice.jpg");
-    border-radius: 15px 15px 0 0;
-    background-repeat: no-repeat;
-    background-size: cover;
+  height: 140px;
+  width: 240px;
+  background: url("./assets/images/menu-items/fried-rice.jpg");
+  border-radius: 15px 15px 0 0;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .item-info-section {
-    padding: 0 10px;
-    max-width: 100%;
+  padding: 0 10px;
+  max-width: 100%;
 }
 
 .item-info-section p {
-    word-wrap: break-word;
-    white-space: normal;
+  word-wrap: break-word;
+  white-space: normal;
 }
 
 .item-name {
-    font-size: 1.333rem;
+  font-size: 1.333rem;
 }
 
 .item-description {
-    color: grey;
+  color: grey;
 }
 
 .item-price-cart-container {
-    display: flex;
-    justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
 }
 
-/** ORDER CONTAINER **/
+.item-price-cart-container button {
+  width: 40px;
+  height: 40px;
+  border: 1px solid grey;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.item-price-cart-container button:hover {
+  box-shadow: 1px 1px 7px #80808091;
+}
+
+.fa-cart-plus,
+.fa-check {
+  font-size: 1.3rem;
+}
+
+#fa-check {
+  color: green;
+  display: none;
+}
+
+/** ORDER ITEMS **/
 .order-item-img {
-    width: 70px;
-    height: 70px;
-    background: url("./assets/images/menu-items/fried-rice.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
+  width: 85px;
+  height: auto;
 }
 
 .order-item {
-    padding: 1rem 1.2rem;
-    display: flex;
-    justify-content: space-between;
-    border: 1px solid grey;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid grey;
+  gap: 10px;
+  animation: clear 0.2s 0.2s forwards;
+  opacity: 0;
+}
+
+.order-item-name {
+  flex-grow: 1;
+}
+
+.order-item-description-container {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.order-item-description-container p {
+  margin: 2px 0;
+}
+
+.trash-icon {
+  padding: 0 0.3rem;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+.trash-icon:hover {
+  box-shadow: 1px 1px 7px #80808091;
 }
 
 /** MEDIA **/
 
 /* For big screens, make content a little smaller. Prev. 80vw */
 @media only screen and (min-width: 1500px) {
-    #content {
-        max-width: 70vw;
-    }
+  #content {
+    max-width: 70vw;
+  }
 }
 
 /* When screen gets smaller get rid of order container */
 @media only screen and (max-width: 1100px) {
-    #order-container {
-        display: none;
-    }
-    #menu-container {
-        flex-basis: auto;
-    }
+  #order-container {
+    display: none;
+  }
+  #menu-container {
+    flex-basis: auto;
+  }
 }
 
 /** KEYFRAMES **/
 @keyframes clear {
-    to {
-        opacity: 1;
-        transform: none;
-    }
+  to {
+    opacity: 1;
+    transform: none;
+  }
 }
 
 @keyframes clearBlob {
-    to {
-        opacity: 30%;
-        transform: none;
-    }
-}
-
-@keyframes yourOrderContainerDrop {
-    to {
-        max-height: 80vh;
-    }
+  to {
+    opacity: 30%;
+    transform: none;
+  }
 }

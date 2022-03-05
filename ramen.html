@@ -6,6 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
         <link rel="stylesheet" href="./ramen_styles.css" />
+        <script src="https://kit.fontawesome.com/c3ceb6720d.js" crossorigin="anonymous"></script>
         <title>Ramen | Order</title>
     </head>
     <body>
@@ -59,7 +60,12 @@
                                     <div class="item-price-cart-container">
                                         <p class="item-price">$10.50</p>
                                         <button type="button">
-                                            Add to cart
+                                            <div id="cart-plus">
+                                                <i class="fa-solid fa-cart-plus"></i>
+                                            </div>
+                                            <div id="fa-check">
+                                                <i class="fa-solid fa-check"></i>
+                                            </div>
                                         </button>
                                     </div>
                                 </section>
@@ -73,8 +79,18 @@
                     </div>
                     <section id="order-items-section">
                         <div id="1" class="order-item">
-                            <div class="order-item-img"></div>
-                            <p class="order-item-name">Fried Rice</p>
+                            <div class="order-item-description-container">
+                                <div class="order-item-img-container">
+                                    <img class="order-item-img" src="./assets/images/menu-items/fried-rice.jpg" alt="">
+                                </div>
+                                <div class="order-item-description">
+                                    <p class="order-item-name">Fried Rice asdfasdf asdf asdf</p>
+                                    <p class="order-item-price">$10.50</p>
+                                </div>
+                            </div>
+                            <div class="trash-icon">
+                                <i class="fa-solid fa-trash"></i>
+                            </div>
                         </div>
 
                         <!-- <div id="empty-order-container">
