@@ -221,6 +221,9 @@ main {
 .order-item-img {
   width: 85px;
   height: auto;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 .order-item {
