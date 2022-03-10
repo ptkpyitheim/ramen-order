@@ -104,17 +104,18 @@ function createMenuItem(menuItemContext) {
 
   const addToCart = document.createElement("button");
   addToCart.setAttribute("type", "button");
+  addToCart.setAttribute("data-id", menuItemContext.id);
 
   addToCart.addEventListener("click", addToCartHandler);
 
   const cartPlus = document.createElement("div");
-  cartPlus.setAttribute("id", "cart-plus");
+  cartPlus.setAttribute("class", "cart-plus-container");
 
   const iconCartPlus = document.createElement("i");
   iconCartPlus.setAttribute("class", "fa-solid fa-cart-plus");
 
   const faCheck = document.createElement("div");
-  faCheck.setAttribute("id", "fa-check");
+  faCheck.setAttribute("class", "check-container");
 
   const iconFaCheck = document.createElement("i");
   iconFaCheck.setAttribute("class", "fa-solid fa-check");
@@ -140,8 +141,22 @@ function createMenuItem(menuItemContext) {
   menuItemsContainer.appendChild(menuItemNode);
 }
 
-function addToCartHandler() {
-  console.log("Added to cart");
+function addToCartHandler(event) {
+  disableButton(event.target);
+  hideAddIconAndRevealCheckIcon(event.target);
+  createItemInOrderSection();
+}
+
+function disableButton(buttonElement) {
+  buttonElement.setAttribute("disabled", "true");
+}
+
+function hideAddIconAndRevealCheckIcon(buttonElement) {
+  buttonElement.childNodes[0].style.display = "none"; //hide add icon
+  buttonElement.childNodes[1].style.display = "block";
+}
+
+function createItemInOrderSection() {
   const orderItemsSection = document.getElementById("order-items-section");
 
   const orderItem = document.createElement("div");

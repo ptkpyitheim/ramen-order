@@ -203,6 +203,10 @@ main {
   cursor: pointer;
 }
 
+.item-price-cart-container button > * {
+  pointer-events: none;
+}
+
 .item-price-cart-container button:hover {
   box-shadow: 1px 1px 7px #80808091;
 }
@@ -212,7 +216,7 @@ main {
   font-size: 1.3rem;
 }
 
-#fa-check {
+.check-container {
   color: green;
   display: none;
 }
