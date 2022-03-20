@@ -144,24 +144,50 @@ function createMenuItem(menuItemContext) {
 function addToCartHandler(event) {
   disableButton(event.target);
   hideAddIconAndRevealCheckIcon(event.target);
-  createItemInOrderSection();
+  createItemInOrderSection(event.target);
+}
+
+function deleteItemHandler(event) {
+  const orderToDelete = event.target.parentNode;
+  const orderId = orderToDelete.id;
+  const buttonToEnableAndRevealAddIcon = document.querySelectorAll(
+    "[data-id='" + orderId + "']"
+  )[0];
+
+  enableButton(buttonToEnableAndRevealAddIcon);
+  hideCheckIconAndRevealAddIcon(buttonToEnableAndRevealAddIcon);
+
+  orderToDelete.remove();
 }
 
 function disableButton(buttonElement) {
   buttonElement.setAttribute("disabled", "true");
 }
 
-function hideAddIconAndRevealCheckIcon(buttonElement) {
-  buttonElement.childNodes[0].style.display = "none"; //hide add icon
-  buttonElement.childNodes[1].style.display = "block";
+function enableButton(buttonElement) {
+  buttonElement.removeAttribute("disabled");
 }
 
-function createItemInOrderSection() {
+function hideCheckIconAndRevealAddIcon(buttonElement) {
+  buttonElement.childNodes[0].style.display = "block";
+  buttonElement.childNodes[1].style.display = "none";
+}
+
+function hideAddIconAndRevealCheckIcon(buttonElement) {
+  buttonElement.childNodes[0].style.display = "none"; //hide add icon
+  buttonElement.childNodes[1].style.display = "block"; //reveal check icon
+}
+
+function createItemInOrderSection(buttonElement) {
   const orderItemsSection = document.getElementById("order-items-section");
+
+  const itemId = buttonElement.getAttribute("data-id");
+
+  const orderDataToAppend = menuItems.filter((item) => item.id === itemId)[0];
 
   const orderItem = document.createElement("div");
   orderItem.setAttribute("class", "order-item");
-  orderItem.setAttribute("id", "1");
+  orderItem.setAttribute("id", itemId);
 
   const orderItemDescContainer = document.createElement("div");
   orderItemDescContainer.setAttribute(
@@ -177,22 +203,27 @@ function createItemInOrderSection() {
 
   const orderItemImg = document.createElement("img");
   orderItemImg.setAttribute("class", "order-item-img");
-  orderItemImg.setAttribute("alt", "Fried Rice");
-  orderItemImg.setAttribute("src", "./assets/images/menu-items/fried-rice.jpg");
+  orderItemImg.setAttribute("alt", orderDataToAppend.description);
+  orderItemImg.setAttribute(
+    "src",
+    "./assets/images/menu-items/" + orderDataToAppend.image
+  );
 
   const orderItemName = document.createElement("p");
   orderItemName.setAttribute("class", "order-item-name");
-  orderItemName.innerText = "Fried Rice";
+  orderItemName.innerText = orderDataToAppend.name;
 
   const orderItemPrice = document.createElement("p");
   orderItemPrice.setAttribute("class", "order-item-price");
-  orderItemPrice.innerText = "$10.50";
+  orderItemPrice.innerText = orderDataToAppend.price;
 
-  const trashIconContainer = document.createElement("div");
+  const trashIconContainer = document.createElement("button");
   trashIconContainer.setAttribute("class", "trash-icon");
   const trashIcon = document.createElement("i");
   trashIcon.setAttribute("class", "fa-solid fa-trash");
   trashIconContainer.appendChild(trashIcon);
+
+  trashIconContainer.addEventListener("click", deleteItemHandler);
 
   orderItemImgContainer.appendChild(orderItemImg);
   orderItemDesc.appendChild(orderItemName);

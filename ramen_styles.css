@@ -255,9 +255,13 @@ main {
 }
 
 .trash-icon {
-  padding: 0 0.3rem;
+  border: none;
   cursor: pointer;
   border-radius: 50%;
+}
+
+.trash-icon > * {
+  pointer-events: none;
 }
 
 .trash-icon:hover {
