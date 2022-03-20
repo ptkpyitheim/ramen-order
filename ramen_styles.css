@@ -222,6 +222,7 @@ main {
 }
 
 /** ORDER ITEMS **/
+
 .order-item-img {
   width: 85px;
   height: auto;
@@ -266,6 +267,14 @@ main {
 
 .trash-icon:hover {
   box-shadow: 1px 1px 7px #80808091;
+}
+
+/** TOTAL PRICE **/
+#total-price-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 1rem;
+  border-bottom: 1px solid;
 }
 
 /** MEDIA **/

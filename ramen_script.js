@@ -63,6 +63,8 @@ const menuItems = [
   },
 ];
 
+let totalPrice = 0;
+
 //Select the menu items container. We will be appending more HTML elements in here later
 const menuItemsContainer = document.getElementById("menu-items-section");
 
@@ -145,6 +147,9 @@ function addToCartHandler(event) {
   disableButton(event.target);
   hideAddIconAndRevealCheckIcon(event.target);
   createItemInOrderSection(event.target);
+
+  const filteredMenuItem = filterItemObjByButton(event.target);
+  calculateTotalPriceAndDisplay(filteredMenuItem.price, "add");
 }
 
 function deleteItemHandler(event) {
@@ -157,7 +162,25 @@ function deleteItemHandler(event) {
   enableButton(buttonToEnableAndRevealAddIcon);
   hideCheckIconAndRevealAddIcon(buttonToEnableAndRevealAddIcon);
 
+  const menuItemToDelete = menuItems.filter((item) => item.id === orderId)[0];
+  calculateTotalPriceAndDisplay(menuItemToDelete.price, "subtract");
+
   orderToDelete.remove();
+}
+
+function calculateTotalPriceAndDisplay(price, op) {
+  const priceNum = parseFloat(price.substring(1));
+  //Ternary operator
+  totalPrice =
+    op === "subtract" ? totalPrice - priceNum : totalPrice + priceNum;
+
+  // if (op === "substract") {
+  //   totalPrice = totalPrice - priceNum;
+  // } else {
+  //   totalPrice = totalPrice + priceNum;
+  // }
+
+  displayTotalPrice();
 }
 
 function disableButton(buttonElement) {
@@ -178,16 +201,19 @@ function hideAddIconAndRevealCheckIcon(buttonElement) {
   buttonElement.childNodes[1].style.display = "block"; //reveal check icon
 }
 
+function filterItemObjByButton(btnEl) {
+  const itemId = btnEl.getAttribute("data-id");
+  return menuItems.filter((item) => item.id === itemId)[0];
+}
+
 function createItemInOrderSection(buttonElement) {
   const orderItemsSection = document.getElementById("order-items-section");
 
-  const itemId = buttonElement.getAttribute("data-id");
-
-  const orderDataToAppend = menuItems.filter((item) => item.id === itemId)[0];
+  const orderDataToAppend = filterItemObjByButton(buttonElement);
 
   const orderItem = document.createElement("div");
   orderItem.setAttribute("class", "order-item");
-  orderItem.setAttribute("id", itemId);
+  orderItem.setAttribute("id", orderDataToAppend.id);
 
   const orderItemDescContainer = document.createElement("div");
   orderItemDescContainer.setAttribute(
@@ -236,4 +262,8 @@ function createItemInOrderSection(buttonElement) {
   orderItem.appendChild(trashIconContainer);
 
   orderItemsSection.appendChild(orderItem);
+}
+
+function displayTotalPrice() {
+  document.getElementById("total-price").innerText = "$" + totalPrice;
 }

@@ -1,56 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-        <link rel="stylesheet" href="./ramen_styles.css" />
-        <script src="https://kit.fontawesome.com/c3ceb6720d.js" crossorigin="anonymous"></script>
-        <title>Ramen | Order</title>
-    </head>
-    <body>
-        <div id="gradient-bg"></div>
-        <svg
-            viewBox="0 0 500 500"
-            xmlns="http://www.w3.org/2000/svg"
-            xmlns:xlink="http://www.w3.org/1999/xlink"
-            width="100%"
-            id="blobSvg"
+    <link rel="stylesheet" href="./ramen_styles.css" />
+    <script
+      src="https://kit.fontawesome.com/c3ceb6720d.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>Ramen | Order</title>
+  </head>
+  <body>
+    <div id="gradient-bg"></div>
+    <svg
+      viewBox="0 0 500 500"
+      xmlns="http://www.w3.org/2000/svg"
+      xmlns:xlink="http://www.w3.org/1999/xlink"
+      width="100%"
+      id="blobSvg"
+    >
+      <defs>
+        <pattern
+          id="pattern"
+          x="0"
+          y="0"
+          width="100"
+          height="20"
+          patternUnits="userSpaceOnUse"
+          fill="#6c7c93"
         >
-            <defs>
-                <pattern
-                    id="pattern"
-                    x="0"
-                    y="0"
-                    width="100"
-                    height="20"
-                    patternUnits="userSpaceOnUse"
-                    fill="#6c7c93"
-                >
-                    <path
-                        d="M21.184 20c.357-.13.72-.264 1.088-.402l1.768-.661C33.64 15.347 39.647 14 50 14c10.271 0 15.362 1.222 24.629 4.928.955.383 1.869.74 2.75 1.072h6.225c-2.51-.73-5.139-1.691-8.233-2.928C65.888 13.278 60.562 12 50 12c-10.626 0-16.855 1.397-26.66 5.063l-1.767.662c-2.475.923-4.66 1.674-6.724 2.275h6.335zm0-20C13.258 2.892 8.077 4 0 4V2c5.744 0 9.951-.574 14.85-2h6.334zM77.38 0C85.239 2.966 90.502 4 100 4V2c-6.842 0-11.386-.542-16.396-2h-6.225zM0 14c8.44 0 13.718-1.21 22.272-4.402l1.768-.661C33.64 5.347 39.647 4 50 4c10.271 0 15.362 1.222 24.629 4.928C84.112 12.722 89.438 14 100 14v-2c-10.271 0-15.362-1.222-24.629-4.928C65.888 3.278 60.562 2 50 2 39.374 2 33.145 3.397 23.34 7.063l-1.767.662C13.223 10.84 8.163 12 0 12v2z"
-                    ></path>
-                </pattern>
-            </defs>
-            <path
-                id="blob"
-                d="M470,286Q448,322,444.5,366Q441,410,397.5,420.5Q354,431,320.5,445Q287,459,251,454Q215,449,176.5,447Q138,445,106.5,421Q75,397,49.5,364.5Q24,332,17.5,291Q11,250,20.5,210Q30,170,58.5,141.5Q87,113,109.5,79.5Q132,46,173.5,48Q215,50,251.5,41Q288,32,326,42.5Q364,53,384.5,86.5Q405,120,427.5,148.5Q450,177,471,213.5Q492,250,470,286Z"
-                fill="url(#pattern)"
-            ></path>
-        </svg>
-        <section id="content">
-            <header>
-                <h1 id="ptk-ramen-title">Welcome to PTK's (Nami?) Ramen</h1>
-            </header>
-            <main>
-                <section class="container" id="menu-container">
-                    <div class="title" id="menu-title">
-                        <h4>MENU</h4>
-                    </div>
-                    <section id="menu-items-section">
-                        <section class="menu-item">
-                            <!-- <section class="item">
+          <path
+            d="M21.184 20c.357-.13.72-.264 1.088-.402l1.768-.661C33.64 15.347 39.647 14 50 14c10.271 0 15.362 1.222 24.629 4.928.955.383 1.869.74 2.75 1.072h6.225c-2.51-.73-5.139-1.691-8.233-2.928C65.888 13.278 60.562 12 50 12c-10.626 0-16.855 1.397-26.66 5.063l-1.767.662c-2.475.923-4.66 1.674-6.724 2.275h6.335zm0-20C13.258 2.892 8.077 4 0 4V2c5.744 0 9.951-.574 14.85-2h6.334zM77.38 0C85.239 2.966 90.502 4 100 4V2c-6.842 0-11.386-.542-16.396-2h-6.225zM0 14c8.44 0 13.718-1.21 22.272-4.402l1.768-.661C33.64 5.347 39.647 4 50 4c10.271 0 15.362 1.222 24.629 4.928C84.112 12.722 89.438 14 100 14v-2c-10.271 0-15.362-1.222-24.629-4.928C65.888 3.278 60.562 2 50 2 39.374 2 33.145 3.397 23.34 7.063l-1.767.662C13.223 10.84 8.163 12 0 12v2z"
+          ></path>
+        </pattern>
+      </defs>
+      <path
+        id="blob"
+        d="M470,286Q448,322,444.5,366Q441,410,397.5,420.5Q354,431,320.5,445Q287,459,251,454Q215,449,176.5,447Q138,445,106.5,421Q75,397,49.5,364.5Q24,332,17.5,291Q11,250,20.5,210Q30,170,58.5,141.5Q87,113,109.5,79.5Q132,46,173.5,48Q215,50,251.5,41Q288,32,326,42.5Q364,53,384.5,86.5Q405,120,427.5,148.5Q450,177,471,213.5Q492,250,470,286Z"
+        fill="url(#pattern)"
+      ></path>
+    </svg>
+    <section id="content">
+      <header>
+        <h1 id="ptk-ramen-title">Welcome to PTK's (Nami?) Ramen</h1>
+      </header>
+      <main>
+        <section class="container" id="menu-container">
+          <div class="title" id="menu-title">
+            <h4>MENU</h4>
+          </div>
+          <section id="menu-items-section">
+            <section class="menu-item">
+              <!-- <section class="item">
                                 <div class="item-image-container"></div>
                                 <section class="item-info-section">
                                     <p class="item-name">Fried Rice</p>
@@ -70,15 +73,19 @@
                                     </div>
                                 </section> 
                             </section>-->
-                        </section>
-                    </section>
-                </section>
-                <section class="container" id="order-container">
-                    <div class="title" id="order-title">
-                        <h5>YOUR ORDER</h5>
-                    </div>
-                    <section id="order-items-section">
-                        <!-- <div id="1" class="order-item">
+            </section>
+          </section>
+        </section>
+        <section class="container" id="order-container">
+          <div class="title" id="order-title">
+            <h5>YOUR ORDER</h5>
+          </div>
+          <section id="order-items-section">
+            <div id="total-price-container">
+              <p>Total price</p>
+              <p id="total-price">$0</p>
+            </div>
+            <!-- <div id="1" class="order-item">
                             <div class="order-item-description-container">
                                 <div class="order-item-img-container">
                                     <img class="order-item-img" src="./assets/images/menu-items/fried-rice.jpg" alt="">
@@ -93,7 +100,7 @@
                             </button>
                         </div> -->
 
-                        <!-- <div id="empty-order-container">
+            <!-- <div id="empty-order-container">
                             <svg
                                 id="empty-cart-icon"
                                 class="cart-icon"
@@ -105,13 +112,13 @@
                                     d="M96 0C107.5 0 117.4 8.19 119.6 19.51L121.1 32H541.8C562.1 32 578.3 52.25 572.6 72.66L518.6 264.7C514.7 278.5 502.1 288 487.8 288H170.7L179.9 336H488C501.3 336 512 346.7 512 360C512 373.3 501.3 384 488 384H159.1C148.5 384 138.6 375.8 136.4 364.5L76.14 48H24C10.75 48 0 37.25 0 24C0 10.75 10.75 0 24 0H96zM128 464C128 437.5 149.5 416 176 416C202.5 416 224 437.5 224 464C224 490.5 202.5 512 176 512C149.5 512 128 490.5 128 464zM512 464C512 490.5 490.5 512 464 512C437.5 512 416 490.5 416 464C416 437.5 437.5 416 464 416C490.5 416 512 437.5 512 464z"
                                 />
                             </svg>
-                            <small>Your cart is empty</small> -->
-                        </div>
-                    </section>
-                </section>
-            </main>
+                            <small>Your cart is empty</small> 
+                        </div>-->
+          </section>
         </section>
+      </main>
+    </section>
 
-        <script src="ramen_script.js"></script>
-    </body>
+    <script src="ramen_script.js"></script>
+  </body>
 </html>
